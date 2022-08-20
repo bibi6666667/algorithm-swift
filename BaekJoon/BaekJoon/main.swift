@@ -10,7 +10,8 @@ import Foundation
 //let kingChobo = KingChobo()
 //kingChobo.q25238()
 
-
+let chobo = Chobo()
+chobo.q1259()
 
 //let 동숲 = AnimalCrossing()
 //동숲.execute()

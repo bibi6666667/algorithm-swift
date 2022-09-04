@@ -11,8 +11,21 @@ class Node<T: Comparable> { // 비교 가능한 데이터만 저장 - 탐색 시
     var data: T // 데이터는 항상 존재해야 함
     var left: Node? // 왼쪽, 오른쪽 노드는 있을 수도 있고 없을 수도 있으므로 옵셔널
     var right: Node?
+    var parent: Node?
     
     init(data: T) {
         self.data = data
+    }
+    
+    var isRoot: Bool {
+        return parent == nil
+    }
+    
+    var isLeaf: Bool {
+        return left == nil && right == nil
+    }
+    
+    var isFull: Bool { // 노드가 포화상태인지
+        return left != nil && right != nil
     }
 }

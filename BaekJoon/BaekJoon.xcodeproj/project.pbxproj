@@ -13,6 +13,8 @@
 		0038746A28A49DCD00EF5F2B /* Chobo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038746928A49DCD00EF5F2B /* Chobo.swift */; };
 		003F7D6228A13BF900693FCD /* 10162.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F7D6128A13BF900693FCD /* 10162.swift */; };
 		00501365288F87E60057A729 /* KingChobo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501364288F87E60057A729 /* KingChobo.swift */; };
+		0058057628C988960094E0DE /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0058057528C988960094E0DE /* Permutation.swift */; };
+		0058057828C988A20094E0DE /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0058057728C988A20094E0DE /* Combination.swift */; };
 		00B6B89F289621ED00E0C7E0 /* 17413.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6B89E289621ED00E0C7E0 /* 17413.swift */; };
 		00D3CE8928858427009B1D24 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3CE8828858427009B1D24 /* main.swift */; };
 		00D3CE9028858440009B1D24 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3CE8F28858440009B1D24 /* Stack.swift */; };
@@ -38,6 +40,8 @@
 		0038746928A49DCD00EF5F2B /* Chobo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chobo.swift; sourceTree = "<group>"; };
 		003F7D6128A13BF900693FCD /* 10162.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10162.swift; sourceTree = "<group>"; };
 		00501364288F87E60057A729 /* KingChobo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingChobo.swift; sourceTree = "<group>"; };
+		0058057528C988960094E0DE /* Permutation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permutation.swift; sourceTree = "<group>"; };
+		0058057728C988A20094E0DE /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		00B6B89E289621ED00E0C7E0 /* 17413.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17413.swift; sourceTree = "<group>"; };
 		00D3CE8528858427009B1D24 /* BaekJoon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaekJoon; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D3CE8828858427009B1D24 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				002B6228289C0D3B00307AA6 /* AnimalCrossing.swift */,
 				002B622A289C22D500307AA6 /* CodingTest.swift */,
 				003081EA28A1F9C1001B7600 /* 5585.swift */,
+				0058057528C988960094E0DE /* Permutation.swift */,
+				0058057728C988A20094E0DE /* Combination.swift */,
 			);
 			path = BaekJoon;
 			sourceTree = "<group>";
@@ -147,8 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0058057628C988960094E0DE /* Permutation.swift in Sources */,
 				003F7D6228A13BF900693FCD /* 10162.swift in Sources */,
 				00D3CE9028858440009B1D24 /* Stack.swift in Sources */,
+				0058057828C988A20094E0DE /* Combination.swift in Sources */,
 				00501365288F87E60057A729 /* KingChobo.swift in Sources */,
 				003081EB28A1F9C1001B7600 /* 5585.swift in Sources */,
 				002B622B289C22D500307AA6 /* CodingTest.swift in Sources */,

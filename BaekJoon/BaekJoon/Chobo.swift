@@ -203,11 +203,6 @@ class Chobo {
     }
     
     func q2309() { // 일곱 난쟁이
-        // 10이 되는 3개의 수 찾기
-        // 1 2 3 4 5
-        // 1 - 2, 3 / 2, 4 / 2, 5
-        // 1 - 3, 4 / 3, 5
-        // 1 - 4, 5
         // 7개의 합을 구하는 게 아니라 전체합 - 100 해서 나머지 2개의 합을 구하기
         // 반복문 / 조합 으로 구하기 - set공부
         var inputArr: [Int] = []
@@ -231,5 +226,69 @@ class Chobo {
         for input in inputArr {
             print(input)
         }
+    }
+    
+    func q2355() { // 시그마
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let a = inputArr.min()!
+        let b = inputArr.max()!
+        print((b * (b + 1)) / 2 - (a * (a - 1)) / 2)
+    }
+    
+    func q2386() { // 도비의 영어 공부
+        while true {
+            let input = readLine()!.lowercased()
+            if input == "#" {
+                break
+            }
+            
+            let inputArr = input.split(separator: " ")
+            let alphabet = inputArr[0]
+            var alphabetCount = 0
+            for inputChar in input {
+                print(inputChar)
+                if String(inputChar) == alphabet {
+                    alphabetCount += 1
+                }
+            }
+            print("\(alphabet) \(alphabetCount - 1)")
+        }
+    }
+    
+    func q2475() { // 검증수
+        let inputArr = readLine()!.split(separator: " ").map { Float($0)! }
+        let sum = inputArr.reduce(0) { partialResult, num in
+            partialResult + pow(num, 2)
+        }
+        print(Int(sum) % 10)
+    }
+    
+    func q2476() { // 주사위 게임
+        let count = Int(readLine()!)!
+        var answer = 0
+        (1...count).forEach { _ in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            let a = inputArr[0]
+            let b = inputArr[1]
+            let c = inputArr[2]
+            var prize = 0
+            if a == b && b == c && a == c {
+                prize = 10000 + (a * 1000)
+            } else if a == b || b == c || a == c {
+                var equalNum = 0
+                if inputArr.filter({ $0 == a }).count == 2 {
+                    equalNum = a
+                } else {
+                    equalNum = c
+                }
+                prize = 1000 + equalNum * 100
+            } else {
+                prize = inputArr.max()! * 100
+            }
+            if prize > answer {
+                answer = prize
+            }
+        }
+        print(answer)
     }
 }

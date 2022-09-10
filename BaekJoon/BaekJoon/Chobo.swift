@@ -291,4 +291,26 @@ class Chobo {
         }
         print(answer)
     }
+    
+    func q2484() { // 주사위 네개
+        let count = Int(readLine()!)!
+        var answer = 0
+        (1...count).forEach { _ in
+            var inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            var prize = 0
+            var equalCount = 0
+            var equalNum = 0
+            var tempIndex = 0 // 같은 인덱스 배열 찾기?
+            if inputArr.filter { $0 == inputArr[tempIndex] }.count == 4 {
+            
+            } else {
+                
+            }
+            
+            if prize > answer {
+                answer = prize
+            }
+        }
+        print(answer)
+    }
 }

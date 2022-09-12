@@ -296,15 +296,34 @@ class Chobo {
         let count = Int(readLine()!)!
         var answer = 0
         (1...count).forEach { _ in
-            var inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
             var prize = 0
             var equalCount = 0
             var equalNum = 0
-            var tempIndex = 0 // 같은 인덱스 배열 찾기?
-            if inputArr.filter { $0 == inputArr[tempIndex] }.count == 4 {
-            
-            } else {
-                
+            for index in 0..<4 {
+                let count = inputArr.filter { $0 == inputArr[index] }.count
+                if count > equalCount {
+                    equalCount = count
+                    equalNum = inputArr[index]
+                }
+            }
+            switch equalCount {
+            case 4:
+                prize = 50000 + equalNum * 5000
+            case 3:
+                prize = 10000 + equalNum * 1000
+            case 2:
+                let partialArr = inputArr.filter { $0 != equalNum }
+                if partialArr[0] == partialArr[1] {
+                    let anotherEqualNum = partialArr[0]
+                    prize = 2000 + equalNum * 500 + anotherEqualNum * 500
+                } else {
+                    prize = 1000 + equalNum * 100
+                }
+            case 1:
+                prize = inputArr.max()! * 100
+            default:
+                return
             }
             
             if prize > answer {

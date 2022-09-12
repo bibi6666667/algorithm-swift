@@ -11,7 +11,7 @@ import Foundation
 //kingChobo.q25238()
 
 let chobo = Chobo()
-chobo.q2475()
+chobo.q2484()
 
 //let 동숲 = AnimalCrossing()
 //동숲.execute()

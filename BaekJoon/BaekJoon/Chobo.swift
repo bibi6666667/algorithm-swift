@@ -332,4 +332,153 @@ class Chobo {
         }
         print(answer)
     }
+    
+    func q2490() { // 윷놀이
+        (1...3).forEach { _ in
+            let input = readLine()!.split(separator: " ")
+            let upperCount = input.filter { $0 == "0" }.count
+            switch upperCount {
+            case 1:
+                print("A")
+            case 2:
+                print("B")
+            case 3:
+                print("C")
+            case 4:
+                print("D")
+            case 0:
+                print("E")
+            default:
+                break
+                
+            }
+        }
+    }
+    
+    func q2562() { // 최댓값
+        var maxNum = 0
+        var maxIndex = 0
+        (1...9).forEach { index in
+            let input = Int(readLine()!)!
+            if input > maxNum {
+                maxNum = input
+                maxIndex = index
+            }
+        }
+        print(maxNum, maxIndex, separator: "\n")
+    }
+    
+    func q2566() { // 최댓값
+        var maxNum = 0
+        var maxIndex: (x: Int, y: Int) = (0, 0)
+        (0..<9).forEach { index in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            let currentMax = inputArr.max()!
+            if currentMax > maxNum {
+                maxNum = currentMax
+                maxIndex.x = index
+                maxIndex.y = inputArr.firstIndex(of: currentMax)!
+            }
+        }
+        print(maxNum)
+        print(maxIndex.x + 1, maxIndex.y + 1)
+//        var maxNum = 0
+//        var maxIndex: (x: Int, y: Int) = (0, 0)
+//        (0..<9).forEach { indexX in
+//            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+//            (0..<9).forEach { indexY in
+//                let input = inputArr[indexY]
+//                if input > maxNum {
+//                    maxNum = input
+//                    maxIndex.x = indexX
+//                    maxIndex.y = indexY
+//                }
+//            }
+//        }
+//        print(maxNum)
+//        print(maxIndex.x + 1, maxIndex.y + 1)
+    }
+    
+    func q25024() { // 시간과 날짜
+        let inputCount = Int(readLine()!)!
+        (1...inputCount).forEach { _ in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            var isTime = false
+            var isDate = false
+            if (0...23).contains(inputArr[0])
+                && (0...59).contains(inputArr[1]) {
+                isTime = true
+            }
+            if (1...12).contains(inputArr[0]) {
+                switch inputArr[0] {
+                case 1, 3, 5, 7, 8, 10, 12:
+                    if (1...31).contains(inputArr[1]) {
+                        isDate = true
+                    }
+                case 4, 6, 9, 11:
+                    if (1...30).contains(inputArr[1]) {
+                        isDate = true
+                    }
+                case 2:
+                    if (1...29).contains(inputArr[1]) {
+                        isDate = true
+                    }
+                default:
+                    break
+                }
+            }
+            print("\(isTime ? "Yes" : "No") \(isDate ? "Yes" : "No")")
+        }
+    }
+    
+    func q2576() { // 홀수
+        var oddArr: [Int] = []
+        (1...7).forEach { _ in
+            let input = Int(readLine()!)!
+            if input % 2 == 1 {
+                oddArr.append(input)
+            }
+        }
+        if oddArr.isEmpty {
+            print(-1)
+        } else {
+            print(oddArr.reduce(0, +))
+            print(oddArr.min()!)
+        }
+    }
+    
+    func timer() {
+
+        print(Thread.current.isMainThread)
+        print("메인 런루프 : \(RunLoop.main)")
+        var count = 0
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { t in
+            count += 1
+            print(count)
+            if count >= 5 {
+                t.invalidate()
+            }
+        }
+        while count < 5 {
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+    }
+    
+    
+    func asyncAfter() {
+        var isRunning = true
+        var loop = 0
+        while isRunning {
+            print(Thread.current.isMainThread)
+            print("asyncafter")
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                print("asyncAfter!")
+            }
+            loop += 1
+            if loop == 10 {
+                isRunning = false
+            }
+        }
+    }
 }

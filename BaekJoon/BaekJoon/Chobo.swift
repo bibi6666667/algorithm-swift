@@ -15,37 +15,37 @@ class Chobo {
     
     func q1259() { // 팰린드롬수
     whileLoop: while true { // 루프 이름 붙이기
-            let input = readLine()!
-            let inputArr = input.map { String($0) } // 문자열 -> 문자 배열 input.map { $0 }
-            let inputArr2 = Array(input)
-            let inputArrItem = inputArr[0]
-            let inputArr2Item = inputArr2[0]
-            if input == "0" {
-                break
-            }
-            //123456 : 0~2 인덱스부터 3~5 인덱스까지 비교 = 05, 14, 23
-            // 12345 : 0~1 인덱스부터 3~4 인덱스까지 비교 = 04, 13
-            if inputArr.count % 2 == 0 { // 짝수
-                let indexHalf = inputArr.count / 2
-                for index in 0..<indexHalf {
-                    if inputArr[index] != inputArr[inputArr.count - 1 - index] {
-                        print("no")
-                        continue whileLoop
-                    }
-                }
-            }
-            
-            if inputArr.count % 2 == 1 { // 홀수
-                let indexHalf = (inputArr.count - 1) / 2
-                for index in 0..<indexHalf {
-                    if inputArr[index] != inputArr[inputArr.count - 1 - index] {
-                        print("no")
-                        continue whileLoop
-                    }
-                }
-            }
-            print("yes")
+        let input = readLine()!
+        let inputArr = input.map { String($0) } // 문자열 -> 문자 배열 input.map { $0 }
+        let inputArr2 = Array(input)
+        let inputArrItem = inputArr[0]
+        let inputArr2Item = inputArr2[0]
+        if input == "0" {
+            break
         }
+        //123456 : 0~2 인덱스부터 3~5 인덱스까지 비교 = 05, 14, 23
+        // 12345 : 0~1 인덱스부터 3~4 인덱스까지 비교 = 04, 13
+        if inputArr.count % 2 == 0 { // 짝수
+            let indexHalf = inputArr.count / 2
+            for index in 0..<indexHalf {
+                if inputArr[index] != inputArr[inputArr.count - 1 - index] {
+                    print("no")
+                    continue whileLoop
+                }
+            }
+        }
+        
+        if inputArr.count % 2 == 1 { // 홀수
+            let indexHalf = (inputArr.count - 1) / 2
+            for index in 0..<indexHalf {
+                if inputArr[index] != inputArr[inputArr.count - 1 - index] {
+                    print("no")
+                    continue whileLoop
+                }
+            }
+        }
+        print("yes")
+    }
     }
     
     func q1264() { // 모음의 개수
@@ -382,21 +382,21 @@ class Chobo {
         }
         print(maxNum)
         print(maxIndex.x + 1, maxIndex.y + 1)
-//        var maxNum = 0
-//        var maxIndex: (x: Int, y: Int) = (0, 0)
-//        (0..<9).forEach { indexX in
-//            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
-//            (0..<9).forEach { indexY in
-//                let input = inputArr[indexY]
-//                if input > maxNum {
-//                    maxNum = input
-//                    maxIndex.x = indexX
-//                    maxIndex.y = indexY
-//                }
-//            }
-//        }
-//        print(maxNum)
-//        print(maxIndex.x + 1, maxIndex.y + 1)
+        //        var maxNum = 0
+        //        var maxIndex: (x: Int, y: Int) = (0, 0)
+        //        (0..<9).forEach { indexX in
+        //            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        //            (0..<9).forEach { indexY in
+        //                let input = inputArr[indexY]
+        //                if input > maxNum {
+        //                    maxNum = input
+        //                    maxIndex.x = indexX
+        //                    maxIndex.y = indexY
+        //                }
+        //            }
+        //        }
+        //        print(maxNum)
+        //        print(maxIndex.x + 1, maxIndex.y + 1)
     }
     
     func q25024() { // 시간과 날짜
@@ -447,38 +447,274 @@ class Chobo {
         }
     }
     
-    func timer() {
-
-        print(Thread.current.isMainThread)
-        print("메인 런루프 : \(RunLoop.main)")
-        var count = 0
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { t in
-            count += 1
-            print(count)
-            if count >= 5 {
-                t.invalidate()
-            }
-        }
-        while count < 5 {
-            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+    func q2739() { // 구구단
+        let dan = Int(readLine()!)!
+        (1...9).forEach { num in
+            print("\(dan) * \(num) = \(dan * num)")
         }
     }
     
+    func q25191() { // 치킨댄스를 추는 곰곰이를 본 임스
+        let chicken = Int(readLine()!)!
+        let drinks = readLine()!.split(separator: " ").map { Int($0)! }
+        let maxEat = drinks[0] / 2 + drinks[1]
+        chicken > maxEat ? print(maxEat) : print(chicken)
+    }
     
-    func asyncAfter() {
-        var isRunning = true
-        var loop = 0
-        while isRunning {
-            print(Thread.current.isMainThread)
-            print("asyncafter")
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                print("asyncAfter!")
-            }
-            loop += 1
-            if loop == 10 {
-                isRunning = false
+    func q24265() { // 알고리즘의 수행시간 4
+        let input = Int(readLine()!)!
+        print(input * (input - 1) / 2, 2)
+    }
+    
+    func q24267() { // 알고리즘의 수행시간 6
+        let input = Int(readLine()!)!
+        print(input * (input - 1) * (input - 2) / 6, 3)
+    }
+    
+    func q2744() { // 대소문자 바꾸기
+        let input = readLine()!
+        var answer = ""
+        for char in input {
+            if char.isUppercase {
+                answer += char.lowercased()
+            } else {
+                answer += char.uppercased()
             }
         }
+        print(answer)
+    }
+    
+    func q2754() { // 학점계산
+        let input = readLine()!
+        var answer = ""
+        switch input {
+        case "A+":
+            answer = "4.3"
+        case "A0":
+            answer = "4.0"
+        case "A-":
+            answer = "3.7"
+        case "B+":
+            answer = "3.3"
+        case "B0":
+            answer = "3.0"
+        case "B-":
+            answer = "2.7"
+        case "C+":
+            answer = "2.3"
+        case "C0":
+            answer = "2.0"
+        case "C-":
+            answer = "1.7"
+        case "D+":
+            answer = "1.3"
+        case "D0":
+            answer = "1.0"
+        case "D-":
+            answer = "0.7"
+        case "F":
+            answer = "0.0"
+        default:
+            return
+        }
+        print(answer)
+    }
+    
+    func q2789() { // 유학 금지
+        let censor = "CAMBRIDGE"
+        let input = readLine()!
+        let answer = input.filter {
+            return !censor.contains($0)
+        }
+        print(answer)
+    }
+    
+    func q2798() { // 블랙잭
+        // 그리디? 아님ㅠㅠ 브루트포스. 조합 복습!
+        let input = readLine()!.split(separator: " ").map { Int($0)! }
+        let totalMax = input[1]
+        let count = input[0]
+        var cards = readLine()!.split(separator: " ").map { Int($0)! }
+        var currentMax = 0
+        for i in 0..<count {
+            for j in i + 1..<count { // 직전 반복문에서 사용한 다음 요소부터 사용 - 중복 피하기
+                for k in j + 1..<count {
+                    print(cards[i], cards[j], cards[k])
+                    let sum = cards[i] + cards[j] + cards[k]
+                    if (currentMax...totalMax).contains(sum) {
+                        currentMax = sum
+                    }
+                }
+            }
+        }
+        print(currentMax)
+    }
+    
+    func q2822() { // 점수 계산
+        var scoreArr: [(score: Int, index: Int)] = []
+        var sum = 0
+        var sumArr: [Int] = []
+        (1...8).forEach { i in
+            scoreArr.append((score: Int(readLine()!)!, index: i))
+        }
+        scoreArr.sort { before, after in
+            before.score > after.score // 방향이 중요..
+        }
+        (0..<5).forEach { i in
+            sum += scoreArr[i].score
+            sumArr.append(scoreArr[i].index)
+        }
+        sumArr.sort()
+        print(sum)
+        sumArr.indices.forEach { index in
+            print(sumArr[index], terminator: " ")
+        }
+    }
+    
+    func q2846() { // 오르막길
+        //        let count = Int(readLine()!)!
+        //        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        //        var previousValue = 0
+        //        var uphill: [Int] = []
+        //        var maxUphillHeight = 0
+        //        for index in inputArr.indices {
+        //            let input = inputArr[index]
+        //            if previousValue != 0 {
+        //                if input - previousValue > 0 { // 오르막
+        //                    if uphill.isEmpty {
+        //                        uphill.append(previousValue)
+        //                    }
+        //                    uphill.append(input)
+        //                }
+        //                if input - previousValue <= 0 || index == (inputArr.indices.endIndex - 1) { // 오르막이 아니거나, 입력의 끝인 경우
+        //                    if !uphill.isEmpty {
+        //                        let uphillHeight = uphill.max()! - uphill.min()!
+        //                        if uphillHeight > maxUphillHeight {
+        //                            maxUphillHeight = uphillHeight
+        //                        }
+        //                        uphill = []
+        //                    }
+        //                }
+        //            }
+        //            previousValue = input
+        //        }
+        //        print(maxUphillHeight)
+        let count = Int(readLine()!)!
+        let inputArr = readLine()!.split(separator: " ").map { Int($0) }
+        var uphillStart = inputArr[0]! // 시작점과 끝점을 첫 요소로 할당
+        var uphillEnd = inputArr[0]!
+        var answer = 0
+        for i in 1..<count { // 두번째 요소부터 끝까지 비교
+            let input = inputArr[i]!
+            if input <= uphillEnd { // 오르막이 아닌 경우
+                uphillStart = input // 오르막 시작점, 끝점을 현재 요소로 재설정
+                uphillEnd = input
+            } else { // 오르막인 경우
+                uphillEnd = input // 오르막 끝점을 현재로 설정. 시작점은 그대로이므로 거리가 생기게 된다
+            }
+            answer = max(answer, uphillEnd - uphillStart)
+            print("오르막 : \(uphillStart) 부터 \(uphillEnd) 까지")
+        }
+        print(answer)
+        
+    }
+    
+    func q2857() { // FBI
+        var answer: [Int] = []
+        (1...5).forEach { number in
+            let agent = readLine()!
+            if agent.contains("FBI") {
+                answer.append(number)
+            }
+        }
+        if answer.isEmpty {
+            print("HE GOT AWAY!")
+        } else {
+            answer.forEach { print($0, terminator: " ")}
+        }
+    }
+    
+    func q2947() { // 나무 조각
+        
+        var inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        var index = 0
+        while inputArr != [1, 2, 3, 4, 5] {
+            if index == inputArr.count - 1 {
+                index = 0
+                continue
+            }
+            if inputArr[index] > inputArr[index + 1] {
+                inputArr.swapAt(index, index + 1)
+                inputArr.forEach{ print($0, terminator: " ") }
+                print("")
+            }
+            index += 1
+        }
+    }
+    
+    func q2953() { // 나는 요리사다
+        var num = 0
+        var score = 0
+        (1...5).forEach { number in
+            let inputSum = readLine()!.split(separator: " ").map { Int($0)! }.reduce(0, +)
+            if inputSum > score {
+                score = inputSum
+                num = number
+            }
+        }
+        print(num, score)
+    }
+    
+    func q2966() { // 찍기
+        let count = Int(readLine()!)!
+        let answers = readLine()!.map { String($0) }
+        let student1 = ["A", "B", "C"]
+        let student2 = ["B", "A", "B", "C"]
+        let student3 = ["C", "C", "A", "A", "B", "B"]
+        var student1Score = 0
+        var student2Score = 0
+        var student3Score = 0
+        for number in (0..<count) {
+            let answer = answers[number]
+            if answer == student1[number % student1.count] {
+                student1Score += 1
+            }
+            if answer == student2[number % student2.count] {
+                student2Score += 1
+            }
+            if answer == student3[number % student3.count] {
+                student3Score += 1
+            }
+        }
+        let maxScore = max(student1Score, student2Score, student3Score)
+        print(maxScore)
+        if maxScore == student1Score {
+            print("Adrian")
+        }
+        if maxScore == student2Score {
+            print("Bruno")
+        }
+        if maxScore == student3Score {
+            print("Goran")
+        }
+    }
+    
+    func q3004() { // 체스판 조각
+        let cut = Int(readLine()!)!
+        var answer = 0
+        if cut == 1 {
+            answer = 2
+        } else if cut == 2 {
+            answer = 4
+        } else {
+            if cut % 2 == 1 {
+                let cutHalf = (cut + 1) / 2
+                answer = 2 + (2...cutHalf).reduce(0, +) * 2
+            } else {
+                let cutHalf = cut / 2
+                answer = 2 + (2...cutHalf).reduce(0, +) * 2 + (cut / 2 + 1)
+            }
+        }
+        print(answer)
     }
 }

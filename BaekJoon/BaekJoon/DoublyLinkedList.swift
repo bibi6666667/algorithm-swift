@@ -1,5 +1,5 @@
 //
-//  LinkedList.swift
+//  DoublyLinkedList.swift
 //  BaekJoon
 //
 //  Created by Bibi on 2022/10/06.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-public class Node<T> {
+public class DoublyLinkedListNode<T> {
     var value: T
-    var next: Node<T>? // 마지막 노드의 next는 nil이 되므로
-    weak var previous: Node<T>? // 순환참조 방지
-    // weak 없으면 A-B일 때 A는 next로 B를, B도 previous로 A를 참조하게 됨
+    var next: DoublyLinkedListNode<T>? // 마지막 노드의 next는 nil이 되므로
+    weak var previous: DoublyLinkedListNode<T>? // 순환참조 방지
+    // weak 없으면 A-B일 때 A는 next로 B를, B도 previous로 A를 참조하게 되어 순환참조 발생
     
     init(value: T) {
         self.value = value
@@ -19,22 +19,25 @@ public class Node<T> {
 }
 
 public class DoublyLinkedList<T> { // 양방향 연결 리스트
-    fileprivate var head: Node<T>?
-    private var tail: Node<T>?
+    
+    public typealias Node = DoublyLinkedListNode<T>
+    
+    fileprivate var head: Node?
+    private var tail: Node?
     
     public var isEmpty: Bool {
         return head == nil
     }
     
-    public var first: Node<T>? {
+    public var first: Node? {
         return head
     }
     
-    public var last: Node<T>? {
+    public var last: Node? {
         return tail
     }
     
-    public func append(value: T) {
+    public func append(_ value: T) {
         // 1. value를 갖는 새 노드 생성
         let newNode = Node(value: value)
         // 2-1. tailNode가 nil이 아님 = 링크드리스트에 무언가 있음. 따라서 기존의 tail 뒤에 새 노드를 추가.
@@ -49,7 +52,7 @@ public class DoublyLinkedList<T> { // 양방향 연결 리스트
         tail = newNode
     }
     
-    public func nodeAt(index: Int) -> Node<T>? {
+    public func nodeAt(index: Int) -> Node? {
         // 특정 인덱스의 노드를 반환
         if index >= 0 { // index가 음수일 때 무한루프 방지
             var node = head
@@ -71,7 +74,7 @@ public class DoublyLinkedList<T> { // 양방향 연결 리스트
     }
     
     // MARK: 비정상 동작
-    public func remove(node: Node<T>) -> T {
+    public func remove(node: Node) -> T {
         let prev = node.previous
         let next = node.next
         
@@ -93,7 +96,7 @@ public class DoublyLinkedList<T> { // 양방향 연결 리스트
     }
 }
 
-extension Node: CustomStringConvertible {
+extension DoublyLinkedListNode: CustomStringConvertible {
     public var description: String {
         return "\(value)"
     }

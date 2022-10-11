@@ -717,4 +717,48 @@ class Chobo {
         }
         print(answer)
     }
+    
+    func q3035() { // 스캐너
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let r = inputArr[0]
+        let c = inputArr[1]
+        let zr = inputArr[2] // 세로
+        let zc = inputArr[3] // 가로
+        var answer: [String] = []
+        for _ in (1...r) {
+            var input = readLine()!
+            var line = ""
+            for _ in (1...zr) {
+                for char in input {
+                    for _ in (1...zc) {
+                        line.append(char)
+                    }
+                }
+                answer.append(line)
+                line = ""
+            }
+        }
+        answer.forEach { print($0) }
+    }
+    
+    func q3040() { // 백설 공주와 일곱 난쟁이 (= 일곱 난쟁이)
+        var inputArr: [Int] = []
+        (1...9).forEach { _ in
+            inputArr.append(Int(readLine()!)!)
+        }
+        let sum = inputArr.reduce(0, +)
+        let remain = sum - 100
+    outerLoop: for i in inputArr.indices {
+            for j in inputArr.indices {
+                let a = inputArr[i]
+                let b = inputArr[j]
+                if i != j && inputArr[i] + inputArr[j] == remain {
+                    inputArr.remove(at: inputArr.firstIndex(of: a)!)
+                    inputArr.remove(at: inputArr.firstIndex(of: b)!)
+                    break outerLoop // 매우 필요!
+                }
+            }
+        }
+        inputArr.forEach { print($0) }
+    }
 }

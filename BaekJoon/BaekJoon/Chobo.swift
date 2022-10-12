@@ -761,4 +761,48 @@ class Chobo {
         }
         inputArr.forEach { print($0) }
     }
+    
+    func q3047() { // ABC
+        var input = readLine()!.split(separator: " ").map { Int($0)! }
+        input = input.sorted()
+        let order = readLine()!
+        for char in order {
+            switch char {
+            case "A":
+                print(input[0], terminator: " ")
+            case "B":
+                print(input[1], terminator: " ")
+            case "C":
+                print(input[2], terminator: " ")
+            default:
+                break
+            }
+        }
+    }
+    
+    func q4447() { // 좋은놈 나쁜놈
+        let count = Int(readLine()!)!
+        for _ in 1...count {
+            let input = readLine()!
+            var countG = 0
+            var countB = 0
+            for char in input {
+                if char.lowercased() == "g" {
+                    countG += 1
+                }
+                if char.lowercased() == "b" {
+                    countB += 1
+                }
+            }
+            if countG > countB {
+                print("\(input) is GOOD")
+            }
+            if countG < countB {
+                print("\(input) is A BADDY")
+            }
+            if countG == countB {
+                print("\(input) is NEUTRAL")
+            }
+        }
+    }
 }

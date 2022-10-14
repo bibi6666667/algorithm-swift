@@ -805,4 +805,30 @@ class Chobo {
             }
         }
     }
+    
+    func q4458() { // 첫 글자를 대문자로
+//        let count = Int(readLine()!)!
+//        var answer: [String] = []
+//        if count <= 0 {
+//            return
+//        }
+//        (1...count).forEach { _ in
+//            let input = readLine()!
+//            let startIndex = input.startIndex
+//            if input[startIndex].isLowercase {
+//                print(input[startIndex].uppercased() + input[input.index(after: startIndex)...input.index(before: input.endIndex)])
+//            }
+//            if input[startIndex].isUppercase {
+//                print(input)
+//            }
+//        }
+        
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            var input = readLine()!
+            let first = input[input.startIndex].uppercased()
+            input.removeFirst()
+            print(first + input)
+        }
+    }
 }

@@ -40,7 +40,6 @@ class Permutation {
         
         if currentTempArray.count == count { // 순열 중 하나가 완성된 경우
             currentAnswer.append(currentTempArray)
-            print(currentAnswer)
             return currentAnswer
         }
         

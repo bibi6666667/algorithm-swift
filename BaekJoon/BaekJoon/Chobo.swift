@@ -831,4 +831,46 @@ class Chobo {
             print(first + input)
         }
     }
+    
+    func q4493() { // 가위 바위 보?
+        let count = Int(readLine()!)!
+        (1...count).forEach { num in
+            let game = Int(readLine()!)!
+            var score1 = 0
+            var score2 = 0
+            (1...game).forEach { _ in
+                let inputArr = readLine()!.split(separator: " ")
+                if inputArr.contains("R") && inputArr.contains("S") { // O(n)..
+                    if inputArr.first! == "R" {
+                        score1 += 1
+                    } else {
+                        score2 += 1
+                    }
+                }
+                if inputArr.contains("S") && inputArr.contains("P") {
+                    if inputArr.first! == "S" {
+                        score1 += 1
+                    } else {
+                        score2 += 1
+                    }
+                }
+                if inputArr.contains("P") && inputArr.contains("R") {
+                    if inputArr.first! == "P" {
+                        score1 += 1
+                    } else {
+                        score2 += 1
+                    }
+                }
+            }
+            print(score1, score2)
+            if score1 > score2 {
+                print("Player 1")
+            } else if score1 < score2 {
+                print("Player 2")
+            } else {
+                print("TIE")
+            }
+        }
+    }
+
 }

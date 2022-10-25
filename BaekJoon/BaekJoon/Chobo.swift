@@ -873,4 +873,25 @@ class Chobo {
         }
     }
 
+    func q4504() { // 배수 찾기
+        let multiple = Int(readLine()!)!
+        while let input = Int(readLine()!), input != 0 {
+            if input % multiple == 0 {
+                print("\(input) is a multiple of \(multiple).")
+            } else {
+                print("\(input) is NOT a multiple of \(multiple).")
+            }
+        }
+    }
+    
+    func q4880() { // 다음수
+        while let input = readLine(), input != "0 0 0" {
+            let inputArr = input.split(separator: " ").map { Int($0)! }
+            if inputArr[2] - inputArr[1] == inputArr[1] - inputArr[0] {
+                print("AP \(inputArr[2] + (inputArr[2] - inputArr[1]))")
+            } else if inputArr[2] / inputArr[1] == inputArr[1] / inputArr[0] {
+                print("GP \(inputArr[2] * (inputArr[2] / inputArr[1]))")
+            }
+        }
+    }
 }

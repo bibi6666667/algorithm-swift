@@ -12,7 +12,12 @@
 		003081EB28A1F9C1001B7600 /* 5585.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003081EA28A1F9C1001B7600 /* 5585.swift */; };
 		0038746A28A49DCD00EF5F2B /* Chobo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038746928A49DCD00EF5F2B /* Chobo.swift */; };
 		003F7D6228A13BF900693FCD /* 10162.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F7D6128A13BF900693FCD /* 10162.swift */; };
+		004BB7DF28FE7FBF00BB662C /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BB7DE28FE7FBF00BB662C /* Recursion.swift */; };
+		004EE45628EEB14B009C4B34 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EE45528EEB14B009C4B34 /* DoublyLinkedList.swift */; };
+		004EE45828EF04A0009C4B34 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EE45728EF04A0009C4B34 /* LinkedList.swift */; };
 		00501365288F87E60057A729 /* KingChobo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501364288F87E60057A729 /* KingChobo.swift */; };
+		00508A0328DEA610006F3FCB /* Programmers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00508A0228DEA610006F3FCB /* Programmers.swift */; };
+		00508A0528DEC7FA006F3FCB /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00508A0428DEC7FA006F3FCB /* Kakao.swift */; };
 		0058057628C988960094E0DE /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0058057528C988960094E0DE /* Permutation.swift */; };
 		0058057828C988A20094E0DE /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0058057728C988A20094E0DE /* Combination.swift */; };
 		00B6B89F289621ED00E0C7E0 /* 17413.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6B89E289621ED00E0C7E0 /* 17413.swift */; };
@@ -39,7 +44,12 @@
 		003081EA28A1F9C1001B7600 /* 5585.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 5585.swift; sourceTree = "<group>"; };
 		0038746928A49DCD00EF5F2B /* Chobo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chobo.swift; sourceTree = "<group>"; };
 		003F7D6128A13BF900693FCD /* 10162.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10162.swift; sourceTree = "<group>"; };
+		004BB7DE28FE7FBF00BB662C /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
+		004EE45528EEB14B009C4B34 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedList.swift; sourceTree = "<group>"; };
+		004EE45728EF04A0009C4B34 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		00501364288F87E60057A729 /* KingChobo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingChobo.swift; sourceTree = "<group>"; };
+		00508A0228DEA610006F3FCB /* Programmers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programmers.swift; sourceTree = "<group>"; };
+		00508A0428DEC7FA006F3FCB /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 		0058057528C988960094E0DE /* Permutation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permutation.swift; sourceTree = "<group>"; };
 		0058057728C988A20094E0DE /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		00B6B89E289621ED00E0C7E0 /* 17413.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17413.swift; sourceTree = "<group>"; };
@@ -63,7 +73,7 @@
 		00D3CE7C28858427009B1D24 = {
 			isa = PBXGroup;
 			children = (
-				00D3CE8728858427009B1D24 /* BaekJoon */,
+				00D3CE8728858427009B1D24 /* AlgorithmSwift */,
 				00D3CE8628858427009B1D24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +86,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00D3CE8728858427009B1D24 /* BaekJoon */ = {
+		00D3CE8728858427009B1D24 /* AlgorithmSwift */ = {
 			isa = PBXGroup;
 			children = (
 				00D3CE8828858427009B1D24 /* main.swift */,
@@ -91,8 +101,13 @@
 				003081EA28A1F9C1001B7600 /* 5585.swift */,
 				0058057528C988960094E0DE /* Permutation.swift */,
 				0058057728C988A20094E0DE /* Combination.swift */,
+				00508A0228DEA610006F3FCB /* Programmers.swift */,
+				00508A0428DEC7FA006F3FCB /* Kakao.swift */,
+				004EE45728EF04A0009C4B34 /* LinkedList.swift */,
+				004EE45528EEB14B009C4B34 /* DoublyLinkedList.swift */,
+				004BB7DE28FE7FBF00BB662C /* Recursion.swift */,
 			);
-			path = BaekJoon;
+			path = AlgorithmSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 00D3CE8028858427009B1D24 /* Build configuration list for PBXProject "BaekJoon" */;
+			buildConfigurationList = 00D3CE8028858427009B1D24 /* Build configuration list for PBXProject "AlgorithmSwift" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -153,7 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004BB7DF28FE7FBF00BB662C /* Recursion.swift in Sources */,
 				0058057628C988960094E0DE /* Permutation.swift in Sources */,
+				00508A0528DEC7FA006F3FCB /* Kakao.swift in Sources */,
 				003F7D6228A13BF900693FCD /* 10162.swift in Sources */,
 				00D3CE9028858440009B1D24 /* Stack.swift in Sources */,
 				0058057828C988A20094E0DE /* Combination.swift in Sources */,
@@ -164,7 +181,10 @@
 				002B6229289C0D3B00307AA6 /* AnimalCrossing.swift in Sources */,
 				00E42563288EBE17008E7D1D /* 9012.swift in Sources */,
 				00D3CE8928858427009B1D24 /* main.swift in Sources */,
+				004EE45628EEB14B009C4B34 /* DoublyLinkedList.swift in Sources */,
 				0038746A28A49DCD00EF5F2B /* Chobo.swift in Sources */,
+				004EE45828EF04A0009C4B34 /* LinkedList.swift in Sources */,
+				00508A0328DEA610006F3FCB /* Programmers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00D3CE8028858427009B1D24 /* Build configuration list for PBXProject "BaekJoon" */ = {
+		00D3CE8028858427009B1D24 /* Build configuration list for PBXProject "AlgorithmSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00D3CE8A28858427009B1D24 /* Debug */,

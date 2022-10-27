@@ -894,4 +894,16 @@ class Chobo {
             }
         }
     }
+    
+    func q5032() { // 탄산 음료
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        var bottle = inputArr[0] + inputArr[1]
+        let exchange = inputArr[2]
+        var cola = 0
+        while bottle >= exchange {
+            cola += bottle / exchange // 몫
+            bottle = bottle / exchange + bottle % exchange // 바꾼 콜라도 다 먹고 빈병에 다시 더해야 함
+        }
+        print(cola)
+    }
 }

@@ -51,5 +51,28 @@ class Programmers {
         return operation
     }
     
+    func solution(_ n: Int) -> Int { // 다음 큰 숫자
+        var answer: Int = n
+        var answerCount1 = countBinary1(num: answer)
+        while true {
+            answer += 1
+            let binaryCount1 = countBinary1(num: answer)
+            print(answer, binaryCount1)
+            if binaryCount1 == answerCount1 {
+                break
+            }
+        }
+        return answer
+    }
     
+    func countBinary1(num: Int) -> Int {
+        var count1 = 0
+        let answerBinary = String(num, radix: 2)
+        answerBinary.forEach { char in
+            if char == "1" {
+                count1 += 1
+            }
+        }
+        return count1
+    }
 }

@@ -906,4 +906,13 @@ class Chobo {
         }
         print(cola)
     }
+    
+    func q5054() { // 주차의 신
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let num = Int(readLine()!)!
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            print((inputArr.max()! - inputArr.min()!) * 2)
+        }
+    }
 }

@@ -915,4 +915,26 @@ class Chobo {
             print((inputArr.max()! - inputArr.min()!) * 2)
         }
     }
+    
+    func q5063() { // TGN
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            // 광고수익 - 광고비용 > 광고 안했을때 수익 : 해야함
+            // 광고수익 - 광고비용 = 광고 안했을때 수익 : 노상관
+            // 광고수익 - 광고비용 < 광고 안했을때 수익 : 하지마
+            let r = inputArr[0] // 광고 안했을때 수익
+            let e = inputArr[1] // 광고 했을떄 수익
+            let c = inputArr[2] // 광고 비용
+            if e - c > r {
+                print("advertise")
+            }
+            if e - c < r {
+                print("do not advertise")
+            }
+            if e - c == r {
+                print("does not matter")
+            }
+        }
+    }
 }

@@ -937,4 +937,19 @@ class Chobo {
             }
         }
     }
+    
+    func q5597() { // 과제 안 내신 분..?
+        var array: [Int] = Array<Int>(repeating: 0, count: 30)
+        (1...28).forEach { _ in
+            let input = Int(readLine()!)!
+            array[input - 1] = input
+        }
+        for index in array.indices {
+            let item = array[index]
+            if item == 0 {
+                print(index + 1)
+            }
+        }
+    }
+    
 }

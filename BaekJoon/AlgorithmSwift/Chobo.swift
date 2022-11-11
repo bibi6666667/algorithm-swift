@@ -952,4 +952,33 @@ class Chobo {
         }
     }
     
+    func q5613() { // 계산기 프로그램
+        var currentResult = 0
+        var currentOperator = ""
+        while let input = readLine() {
+            guard let intInput = Int(input) else {
+                if input == "=" {
+                    break
+                } else {
+                    currentOperator = input
+                    continue
+                }
+            }
+            switch currentOperator {
+            case "+":
+                currentResult += intInput
+            case "-":
+                currentResult -= intInput
+            case "*":
+                currentResult *= intInput
+            case "/":
+                currentResult /= intInput
+            default:
+                currentResult = intInput
+                continue
+            }
+        }
+        print(currentResult)
+    }
+    
 }

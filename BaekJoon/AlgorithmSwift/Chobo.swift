@@ -981,4 +981,13 @@ class Chobo {
         print(currentResult)
     }
     
+    func q5691() { // 평균 중앙값 문제
+        while let input = readLine() {
+            if input == "0 0" {
+                break
+            }
+            let inputArr = input.split(separator: " ").map { Int($0)! }
+            print(inputArr[0] * 2 - inputArr[1])
+        }
+    }
 }

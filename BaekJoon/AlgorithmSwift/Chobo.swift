@@ -749,16 +749,16 @@ class Chobo {
         let sum = inputArr.reduce(0, +)
         let remain = sum - 100
     outerLoop: for i in inputArr.indices {
-            for j in inputArr.indices {
-                let a = inputArr[i]
-                let b = inputArr[j]
-                if i != j && inputArr[i] + inputArr[j] == remain {
-                    inputArr.remove(at: inputArr.firstIndex(of: a)!)
-                    inputArr.remove(at: inputArr.firstIndex(of: b)!)
-                    break outerLoop // 매우 필요!
-                }
+        for j in inputArr.indices {
+            let a = inputArr[i]
+            let b = inputArr[j]
+            if i != j && inputArr[i] + inputArr[j] == remain {
+                inputArr.remove(at: inputArr.firstIndex(of: a)!)
+                inputArr.remove(at: inputArr.firstIndex(of: b)!)
+                break outerLoop // 매우 필요!
             }
         }
+    }
         inputArr.forEach { print($0) }
     }
     
@@ -807,21 +807,21 @@ class Chobo {
     }
     
     func q4458() { // 첫 글자를 대문자로
-//        let count = Int(readLine()!)!
-//        var answer: [String] = []
-//        if count <= 0 {
-//            return
-//        }
-//        (1...count).forEach { _ in
-//            let input = readLine()!
-//            let startIndex = input.startIndex
-//            if input[startIndex].isLowercase {
-//                print(input[startIndex].uppercased() + input[input.index(after: startIndex)...input.index(before: input.endIndex)])
-//            }
-//            if input[startIndex].isUppercase {
-//                print(input)
-//            }
-//        }
+        //        let count = Int(readLine()!)!
+        //        var answer: [String] = []
+        //        if count <= 0 {
+        //            return
+        //        }
+        //        (1...count).forEach { _ in
+        //            let input = readLine()!
+        //            let startIndex = input.startIndex
+        //            if input[startIndex].isLowercase {
+        //                print(input[startIndex].uppercased() + input[input.index(after: startIndex)...input.index(before: input.endIndex)])
+        //            }
+        //            if input[startIndex].isUppercase {
+        //                print(input)
+        //            }
+        //        }
         
         let count = Int(readLine()!)!
         (1...count).forEach { _ in
@@ -872,7 +872,7 @@ class Chobo {
             }
         }
     }
-
+    
     func q4504() { // 배수 찾기
         let multiple = Int(readLine()!)!
         while let input = Int(readLine()!), input != 0 {
@@ -989,5 +989,28 @@ class Chobo {
             let inputArr = input.split(separator: " ").map { Int($0)! }
             print(inputArr[0] * 2 - inputArr[1])
         }
+    }
+    
+    func q5704() { // 팬그램
+        while true {
+            var alphabet = "abcdefghijklmnopqrstuvwxyz".map { $0 }
+            let input = readLine()!
+            if input == "*" {
+                break
+            }
+            for item in input {
+                if item == " " {
+                    continue
+                }
+                if let index = alphabet.firstIndex(of: item) {
+                    alphabet.remove(at: index)
+                        
+                } else {
+                    continue
+                }
+            }
+            alphabet.isEmpty ? print("Y") : print("N")
+        }
+        
     }
 }

@@ -1004,13 +1004,11 @@ class Chobo {
                 }
                 if let index = alphabet.firstIndex(of: item) {
                     alphabet.remove(at: index)
-                        
                 } else {
                     continue
                 }
             }
             alphabet.isEmpty ? print("Y") : print("N")
         }
-        
     }
 }

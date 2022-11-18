@@ -1011,4 +1011,17 @@ class Chobo {
             alphabet.isEmpty ? print("Y") : print("N")
         }
     }
+    
+    func q5988() { // 홀수일까 짝수일까
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let numStr = readLine()!
+            let lastNum = numStr[numStr.index(before: numStr.endIndex)]
+            if Int(String(lastNum))! % 2 == 0 {
+                print("even")
+            } else {
+                print("odd")
+            }
+        }
+    }
 }

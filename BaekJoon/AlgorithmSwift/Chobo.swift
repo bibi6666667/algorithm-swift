@@ -1024,4 +1024,49 @@ class Chobo {
             }
         }
     }
+    
+    func q6322() { // 직각 삼각형의 두 변
+        var count = 0
+        while true {
+            let input = readLine()!
+            if input == "0 0 0" {
+                break
+            }
+            if count > 0 {
+                print("")
+            }
+            let inputArr = input.split(separator: " ").map { Int($0)! }
+            let a = inputArr[0]
+            let b = inputArr[1]
+            let c = inputArr[2]
+            if a < 0 {
+                let answer = Double(c*c - b*b)
+                print("Triangle #\(count + 1)")
+                if answer <= 0 { // 0보다 "같거나" 작을 때
+                    print("Impossible.")
+                } else {
+                    print("a = \(String(format: "%.3f", sqrt(answer)))")
+                }
+            }
+            if b < 0 {
+                let answer = Double(c*c - a*a)
+                print("Triangle #\(count + 1)")
+                if answer <= 0 {
+                    print("Impossible.")
+                } else {
+                    print("b = \(String(format: "%.3f", sqrt(answer)))")
+                }
+            }
+            if c < 0 {
+                let answer = Double(a*a + b*b)
+                print("Triangle #\(count + 1)")
+                if answer <= 0 {
+                    print("Impossible.")
+                } else {
+                    print("c = \(String(format: "%.3f", sqrt(answer)))")
+                }
+            }
+            count += 1
+        }
+    }
 }

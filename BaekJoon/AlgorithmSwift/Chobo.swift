@@ -1069,4 +1069,20 @@ class Chobo {
             count += 1
         }
     }
+    
+    func q6359() { // 만취한 상범
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let input = Int(readLine()!)!
+            var prison = Array<Bool>(repeating: false, count: input)
+            (0..<input).forEach { index in
+                
+                if prison[index] == false {
+                    prison[index] = true
+                } else {
+                    prison[index] = false
+                }
+            }
+        }
+    }
 }

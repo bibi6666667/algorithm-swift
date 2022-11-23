@@ -1075,14 +1075,19 @@ class Chobo {
         (1...count).forEach { _ in
             let input = Int(readLine()!)!
             var prison = Array<Bool>(repeating: false, count: input)
-            (0..<input).forEach { index in
-                
-                if prison[index] == false {
-                    prison[index] = true
-                } else {
-                    prison[index] = false
+            var k = 1
+            while k <= input {
+                (1...input).forEach { num in
+                    let index = k * num - 1
+                    if index < input {
+                        prison[index] = !prison[index]
+                    } else {
+                        return
+                    }
                 }
+                k += 1
             }
+            print(prison.filter { $0 == true }.count)
         }
     }
 }

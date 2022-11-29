@@ -1090,4 +1090,35 @@ class Chobo {
             print(prison.filter { $0 == true }.count)
         }
     }
+    
+    func q6376() { // e 계산
+        print("n e")
+        print("- -----------")
+        var factorial = 1
+        var sigma = 0.0
+        (0...9).forEach { num in
+            var sum: [Double] = []
+            if num == 0  {
+                sum.append(1)
+                sigma += 1
+                print("\(num) \(1)")
+            } else if num == 1 {
+                sum.append(1)
+                sigma += 1
+                print("\(num) \(2)")
+            } else if num == 2 {
+                sum.append(0.5)
+                sigma += 0.5
+                factorial *= num
+                print("\(num) \(sigma)")
+            } else {
+                sum.append(1 / Double(factorial * num))
+                factorial *= num
+                let e = sum.reduce(0.0, +)
+                sigma += e
+                print("\(num) \(String(format: "%.9f", sigma))")
+            }
+        }
+    }
+    
 }

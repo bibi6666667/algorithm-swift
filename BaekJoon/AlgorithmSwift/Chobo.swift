@@ -1121,4 +1121,20 @@ class Chobo {
         }
     }
     
+    func q7510() { // 고급 수학
+        let count = Int(readLine()!)!
+        (1...count).forEach { num in
+            var arr = readLine()!.split(separator: " ").map { Double($0)! }
+            arr = arr.sorted()
+            print("Scenario #\(num):")
+            if pow(arr[2], 2) == pow(arr[0], 2) + pow(arr[1], 2) {
+                print("yes")
+            } else {
+                print("no")
+            }
+            if num != count {
+                print("")
+            }
+        }
+    }
 }

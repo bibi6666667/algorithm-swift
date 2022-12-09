@@ -1137,4 +1137,38 @@ class Chobo {
             }
         }
     }
+    
+    func q9076() { // 점수 집계
+        let count = Int(readLine()!)!
+        (1...count).forEach { num in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }.sorted()
+            let newArr = inputArr[1...3]
+            if newArr[3] - newArr[1] >= 4 {
+                print("KIN")
+            } else {
+                print(newArr.reduce(0, +))
+            }
+        }
+    }
+    
+    func q9094() { // 수학적 호기심
+        
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let input = readLine()!.split(separator: " ").map { Int($0)! }
+            let n = input[0]
+            let m = input[1]
+            var pairs = 0
+            (1..<n).forEach { a in
+                (a+1..<n).forEach { b in
+                    let value = Double(((a*a) + (b*b) + m)) / Double(a*b) // Int끼리 나누면 소수점을 버림
+                    if value == Double(Int(value)) { // Double이 Int인지 아닌지 판별
+                        pairs += 1
+                    }
+                }
+            }
+            print(pairs)
+        }
+    }
+    
 }

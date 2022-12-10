@@ -1171,4 +1171,20 @@ class Chobo {
         }
     }
     
+    func q14924() { // 폰 노이만과 파리
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let meetTime = inputArr[2] / (inputArr[0] * 2)
+        print(meetTime * inputArr[1])
+    }
+    
+    func q9469() { // 폰 노이만
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let inputArr = readLine()!.split(separator: " ").map { Double($0)! }
+            let meetTime = inputArr[1] / (inputArr[2] + inputArr[3])
+            let flyMove = inputArr[4] * meetTime
+            print("\(String(format: "%.0f", inputArr[0])) \(flyMove)")
+            
+        }
+    }
 }

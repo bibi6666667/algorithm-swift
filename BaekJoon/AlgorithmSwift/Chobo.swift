@@ -1187,4 +1187,24 @@ class Chobo {
             
         }
     }
+    
+    func q9501() { // 꿍의 우주여행
+        // 거 = 속 * 시
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            let spaceshipCount = inputArr[0]
+            let distance = inputArr[1]
+            var answer = 0
+            (1...spaceshipCount).forEach { num in
+                let spaceshipArr = readLine()!.split(separator: " ").map { Double($0)! }
+                let move = spaceshipArr[0] * (spaceshipArr[1] / spaceshipArr[2])
+                if Double(distance) <= move {
+                    answer += 1
+                }
+            }
+            print(answer)
+        }
+        
+    }
 }

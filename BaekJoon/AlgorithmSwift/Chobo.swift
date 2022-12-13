@@ -1205,6 +1205,50 @@ class Chobo {
             }
             print(answer)
         }
-        
+    }
+    
+    func q18312() { // 시각
+//        let input = readLine()!.split(separator: " ")
+//        let n = Int(input[0])!
+//        let k = Character(String(input[1]))
+//        var answer = 0
+//
+//        func appendZero(to num: Int) -> String {
+//            var answer = ""
+//            if num < 10 {
+//                answer = "0\(num)"
+//            } else {
+//                answer = "\(num)"
+//            }
+//            return answer
+//        }
+//
+//        (0...n).forEach { hour in
+//            (0...59).forEach { minute in
+//                (0...59).forEach { second in
+//                    let time = "\(appendZero(to: hour))\(appendZero(to: minute))\(appendZero(to: second))"
+//                    if time.contains(k) {
+//                        answer += 1
+//                    }
+//                }
+//            }
+//        }
+//        print(answer)
+        let input = readLine()!.split(separator: " ").map{ Int($0)! }
+        let n = input[0]
+        let k = input[1]
+        var answer = 0
+        (0...n).forEach { hour in
+            (0...59).forEach { minute in
+                (0...59).forEach { second in
+                    if hour / 10 == k || hour % 10 == k
+                        || minute / 10 == k || minute % 10 == k
+                        || second / 10 == k || second % 10 == k {
+                        answer += 1
+                    }
+                }
+            }
+        }
+        print(answer)
     }
 }

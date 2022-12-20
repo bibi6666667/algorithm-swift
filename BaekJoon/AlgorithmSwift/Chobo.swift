@@ -1251,4 +1251,22 @@ class Chobo {
         }
         print(answer)
     }
+    
+    func q10101() { // 삼각형 외우기
+        var triangleArray = Array<Int>()
+        (1...3).forEach { _ in
+            triangleArray.append(Int(readLine()!)!)
+        }
+        if triangleArray.reduce(0, +) == 180 {
+            if triangleArray[0] == triangleArray[1] && triangleArray[1] == triangleArray[2] {
+                print("Equilateral")
+            } else if triangleArray[0] == triangleArray[1] || triangleArray[1] == triangleArray[2] {
+                print("Isosceles")
+            } else {
+                print("Scalene")
+            }
+        } else {
+            print("Error")
+        }
+    }
 }

@@ -7,57 +7,27 @@
 
 import Foundation
 
-class Stack {
-    
-    private var stack: [Int] = []
-    
-    enum Command: String {
-        case push, pop, size, empty, top
+
+struct Stack<Element> {
+    fileprivate var array: [Element] = []
+
+    var isEmpty: Bool {
+        return array.isEmpty
     }
-    
-    func execute(command: String) -> Int? {
-        let commandString = command.components(separatedBy: " ")[0]
-        switch commandString {
-        case Command.push.rawValue:
-            let x = command.components(separatedBy: " ")[1]
-            push(x: Int(x)!)
-            return nil
-        case Command.pop.rawValue:
-            return pop()
-        case Command.size.rawValue:
-            return size()
-        case Command.empty.rawValue:
-            return empty()
-        case Command.top.rawValue:
-            return top()
-        default:
-            return nil
-        }
+
+    var count: Int {
+        return array.count
     }
-    
-    private func push(x: Int) {
-        stack.append(x)
+
+    mutating func push(_ element: Element) {
+        array.append(element)
     }
-    
-    private func pop() -> Int {
-        if stack.last != nil {
-            return stack.removeLast()
-        }
-        return -1
+
+    mutating func pop() -> Element? {
+        return array.popLast()
     }
-    
-    private func size() -> Int {
-        return stack.count
-    }
-    
-    private func empty() -> Int {
-        stack.isEmpty ? 1 : 0
-    }
-    
-    private func top() -> Int {
-        if let last = stack.last {
-            return last
-        }
-        return -1
+
+    func peek() -> Element? {
+        return array.last
     }
 }

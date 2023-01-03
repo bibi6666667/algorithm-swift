@@ -1269,4 +1269,47 @@ class Chobo {
             print("Error")
         }
     }
+    
+    func q10102() { // 개표
+        let count = Int(readLine()!)
+        let input = readLine()!
+        var aCount = 0
+        var bCount = 0
+        
+        for char in input {
+            if char == "A" {
+                aCount += 1
+            }
+            if char == "B" {
+                bCount += 1
+            }
+        }
+        
+        if aCount > bCount {
+            print("A")
+        }
+        if aCount < bCount {
+            print("B")
+        }
+        if aCount == bCount {
+            print("Tie")
+        }
+    }
+    
+    func q10409() { // 서버
+        let total = readLine()!.split(separator: " ").map { Int($0)! }.last!
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        var sum = 0
+        var count = 0
+        for index in inputArr.indices {
+            let input = inputArr[index]
+            sum += input
+            if sum > total {
+                break
+            } else {
+                count += 1
+            }
+        }
+        print(count)
+    }
 }

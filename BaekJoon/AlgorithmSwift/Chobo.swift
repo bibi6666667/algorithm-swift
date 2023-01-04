@@ -1312,4 +1312,25 @@ class Chobo {
         }
         print(count)
     }
+    
+    func q10419() { // 지각
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let input = Int(readLine()!)!
+            for time in 1...input {
+                if input == 1 {
+                    print(0)
+                    break
+                }
+                if time * (time + 1) == input {
+                    print(time)
+                    break
+                }
+                if time * (time + 1) > input {
+                    print(time - 1)
+                    break
+                }
+            }
+        }
+    }
 }

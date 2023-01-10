@@ -1333,4 +1333,15 @@ class Chobo {
             }
         }
     }
+    
+    func q10430() { // 나머지
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let a = inputArr[0]
+        let b = inputArr[1]
+        let c = inputArr[2]
+        print((a + b) % c)
+        print(((a % c) + (b % c)) % c)
+        print((a * b) % c)
+        print(((a % c) * (b % c)) % c)
+    }
 }

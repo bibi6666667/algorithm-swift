@@ -1357,4 +1357,38 @@ class Chobo {
         }
     }
     
+    func q10769() { // 행복한지 슬픈지
+        let input = readLine()!.map{ String($0) }
+        var happyCount = 0
+        var sadCount = 0
+        for index in input.indices {
+            let char = input[index]
+            if char == ":" {
+                if input.indices.contains(index + 1) {
+                    let nextChar = input[index + 1]
+                    if nextChar == "-" {
+                        if input.indices.contains(index + 2) {
+                            let nextNextChar = input[index + 2]
+                            if nextNextChar == ")" {
+                                happyCount += 1
+                            } else if nextNextChar == "(" {
+                                sadCount += 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if happyCount == 0 && sadCount == 0 {
+            print("none")
+        } else if happyCount == sadCount {
+            print("unsure")
+        }
+        if happyCount > sadCount {
+            print("happy")
+        }
+        if happyCount < sadCount {
+            print("sad")
+        }
+    }
 }

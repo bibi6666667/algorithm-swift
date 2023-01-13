@@ -1344,4 +1344,17 @@ class Chobo {
         print((a * b) % c)
         print(((a % c) * (b % c)) % c)
     }
+    
+    func q10539() { // 수빈이와 수열 - 수열 A가 아닌 B가 주어지는 것임!!!
+        let count = Int(readLine()!)!
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        var sum = 0
+        var resultArr: [Int] = []
+        (1...count).forEach { num in
+            let result = inputArr[num - 1] * num - sum
+            sum += result
+            print(result)
+        }
+    }
+    
 }

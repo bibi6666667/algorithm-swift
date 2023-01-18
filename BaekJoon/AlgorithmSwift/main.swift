@@ -10,30 +10,49 @@ import Foundation
 //let kingChobo = KingChobo()
 //kingChobo.q25238()
 
-let chobo = Chobo()
-chobo.q7510()
+//let chobo = Chobo()
+//chobo.q10769()
 
-//let recursion = Recursion()
-//print(recursion.max([100000, 1000, 10]))
+let baekjoon = BaekJoon()
+baekjoon.q2178()
 
-//let programmers = Programmers()
-//print(programmers.solution(78))
-//print(programmers.solution(15))
+//let softeer = Softeer()
+//softeer.q409(n: 7, graph: [
+//    [1,1,1,0,1,1,1],
+//    [0,1,1,0,1,0,1],
+//    [0,1,1,0,1,0,1],
+//    [0,0,0,0,1,0,0],
+//    [0,1,1,0,0,0,0],
+//    [0,1,1,1,1,1,0],
+//    [0,1,1,0,0,0,0]
+//])
 
-//let kakao = Kakao()
-//print(kakao.solution([[40, 10000], [25, 10000]], [7000, 9000]))
-
-//var dogBreeds = LinkedList<String>()
-//dogBreeds.push("Labrador")
-//let firstNode = dogBreeds.node(at: 0)!
-//dogBreeds.insert("Bulldog", after: firstNode)
-//dogBreeds.append("Beagle")
-//dogBreeds.append("Husky")
-//print(dogBreeds)
+//let thisIsCodingTest = ThisIsCodingTest()
+//let dfs1Answer = thisIsCodingTest.dfs1(n: 3, m: 3, graph: [[0,0,1], [0,1,0], [1,0,1]])
+//print(dfs1Answer)
+//let dfs1Answer = thisIsCodingTest.dfs1(n: 15, m: 14,
+//                                       graph:[
+//                                        [0,0,0,0,0,1,1,1,1,0,0,0,0,0],
+//                                        [1,1,1,1,1,1,0,1,1,1,1,1,1,0],
+//                                       [1,1,0,1,1,1,0,1,1,0,1,1,1,0],
+//                                        [1,1,0,1,1,1,0,1,1,0,0,0,0,0],
+//                                        [1,1,0,1,1,1,1,1,1,1,1,1,1,1],
+//                                        [1,1,0,1,1,1,1,1,1,1,1,1,0,0],
+//                                        [1,1,0,0,0,0,0,0,0,1,1,1,1,1],
+//                                        [0,1,1,1,1,1,1,1,1,1,1,1,1,1],
+//                                        [0,0,0,0,0,0,0,0,0,1,1,1,1,1],
+//                                        [0,1,1,1,1,1,1,1,1,1,1,0,0,0],
+//                                        [0,0,0,1,1,1,1,1,1,1,1,0,0,0],
+//                                        [0,0,0,0,0,0,0,1,1,1,1,0,0,0],
+//                                        [1,1,1,1,1,1,1,1,1,1,0,0,1,1],
+//                                        [1,1,1,0,0,0,1,1,1,1,1,1,1,1],
+//                                        [1,1,1,0,0,0,1,1,1,1,1,1,1,1]
+//                                        ])
+//print(dfs1Answer)
+//thisIsCodingTest.greedy3(nm: "3 3", array: ["3 1 2", "4 1 4", "2 2 2"])
+//print(thisIsCodingTest.implementation2(position: "c2"))
+//bfs(graph: graph, start: 1)
 //
-//print("poppedItem : \(dogBreeds.pop())")
-//print(dogBreeds)
-//print("removeLastItem : \(dogBreeds.removeLast())")
-//print(dogBreeds)
-//dogBreeds.remove(after: dogBreeds.node(at: 0)!)
-//print(dogBreeds)
+//print("")
+
+//dfs(graph: graph, start: 1)

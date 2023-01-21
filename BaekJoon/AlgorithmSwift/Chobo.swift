@@ -1391,4 +1391,30 @@ class Chobo {
             print("sad")
         }
     }
+    
+    func q10811() { // 바구니 뒤집기
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let n = inputArr[0]
+        let m = inputArr[1]
+        var baskets = Array(1...n)
+        for _ in (1...m) {
+            let exchange = readLine()!.split(separator: " ").map { Int($0)! }
+            let start = exchange[0] - 1
+            let end = exchange[1] - 1
+            if start == end {
+                continue
+            }
+            if end - start == 1 {
+                baskets.swapAt(start, end)
+                continue
+            }
+            let head = Array(baskets[baskets.startIndex..<start])
+            let tail = Array(baskets[end+1..<baskets.endIndex])
+            let reversed = Array( baskets[start...end].reversed())
+            baskets = head + reversed + tail
+        }
+//        baskets.forEach { print($0, terminator: " ")}
+         print(baskets.map{ String($0) }.joined(separator: " "))
+    }
+    
 }

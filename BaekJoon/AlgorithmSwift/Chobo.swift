@@ -1417,4 +1417,11 @@ class Chobo {
          print(baskets.map{ String($0) }.joined(separator: " "))
     }
     
+    func q10871() { // X보다 작은 수
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let numbers = readLine()!.split(separator: " ").map { Int($0)! }
+        let result = numbers.filter { $0 < inputArr[1] }.map { String($0) }.joined(separator: " ")
+        print(result)
+    }
+    
 }

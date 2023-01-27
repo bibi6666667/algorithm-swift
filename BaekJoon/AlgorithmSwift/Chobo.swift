@@ -1436,5 +1436,25 @@ class Chobo {
         }
     }
     
+    func q10987() { // 모음의 개수 - contain? 아니면 loop?
+//        let input = readLine()!
+//        var answer = 0
+//        for char in input { // 글자수 *
+//            if char == "a" || char == "e" || char == "i" || char == "o" || char == "u" {
+//                answer += 1
+//            }
+//        }
+//        print(answer)
+        let input = readLine()! // 글자수 * 5
+        let aeiou: [Character] = ["a", "e", "i", "o", "u"]
+        var answer = 0
+        for char in input {
+            if aeiou.contains(char) {
+                answer += 1
+            }
+        }
+        print(answer)
+    }
+    
     
 }

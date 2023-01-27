@@ -1424,4 +1424,17 @@ class Chobo {
         print(result)
     }
     
+    func q10872() { // 팩토리얼
+        let input = Int(readLine()!)!
+        print(factorial(num: input))
+        
+        func factorial(num: Int) -> Int {
+            if num == 0 || num == 1 {
+                return 1
+            }
+            return num * factorial(num: num - 1)
+        }
+    }
+    
+    
 }

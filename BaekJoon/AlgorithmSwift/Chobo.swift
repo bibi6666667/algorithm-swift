@@ -1456,5 +1456,16 @@ class Chobo {
         print(answer)
     }
     
+    func q11006() { // 남욱이의 닭장
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            let normalLeg = inputArr[1] * 2
+            let oddLeg = normalLeg - inputArr[0]
+            let evenLeg = inputArr[1] - oddLeg
+            print(oddLeg, evenLeg)
+        }
+    }
+    
     
 }

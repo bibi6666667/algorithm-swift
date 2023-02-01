@@ -1467,5 +1467,15 @@ class Chobo {
         }
     }
     
+    func q11320() { // 삼각 무늬 - 1
+        let count = Int(readLine()!)!
+        (1...count).forEach { _ in
+            let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+            let a = inputArr[0]
+            let b = inputArr[1]
+            let aDevidedByB = a / b
+            print(aDevidedByB * aDevidedByB)
+        }
+    }
     
 }

@@ -1478,4 +1478,25 @@ class Chobo {
         }
     }
     
+    func q11586() { // 지영 공주님의 마법 거울
+        let count = Int(readLine()!)!
+        var mirror: [String] = []
+        (1...count).forEach { _ in
+            mirror.append(readLine()!)
+        }
+        let option = Int(readLine()!)!
+        if option == 1 {
+            mirror.forEach { print($0) }
+        }
+        if option == 2 {
+            mirror.forEach { print(String($0.reversed())) }
+        }
+        if option == 3 {
+            for index in mirror.indices { // 0 ~
+                let revesredIndex = mirror.count - 1 - index
+                print(mirror[revesredIndex])
+            }
+        }
+    }
+    
 }

@@ -1499,4 +1499,15 @@ class Chobo {
         }
     }
     
+    func q11721() { // 열 개씩 끊어 출력하기
+        let input = readLine()!.map{ String($0) }
+        for index in input.indices {
+            let char = input[index]
+            print(char, terminator: "")
+            if index % 10 == 9 {
+                print("")
+            }
+        }
+    }
+    
 }

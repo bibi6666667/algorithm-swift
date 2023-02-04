@@ -1509,5 +1509,22 @@ class Chobo {
             }
         }
     }
+
+    
+    func q14582() { // 오늘도 졌다
+        let ullimArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let startlinkArr = readLine()!.split(separator: " ").map { Int($0)! }
+        var ullimScore = 0
+        var startlinkScore = 0
+        var isUllimWined = false
+        for index in (0..<9) {
+            ullimScore += ullimArr[index]
+            if ullimScore > startlinkScore {
+                isUllimWined = true
+            }
+            startlinkScore += startlinkArr[index]
+        }
+        isUllimWined ? print("Yes") : print("No")
+    }
     
 }

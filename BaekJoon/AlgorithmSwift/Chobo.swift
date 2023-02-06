@@ -1527,4 +1527,11 @@ class Chobo {
         isUllimWined ? print("Yes") : print("No")
     }
     
+    func q14910() { // 오르막
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let orderedArr = inputArr.sorted()
+        inputArr == orderedArr ? print("Good") : print("Bad")
+    }
+    
+    
 }

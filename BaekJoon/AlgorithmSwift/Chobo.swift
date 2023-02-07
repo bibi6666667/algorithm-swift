@@ -1533,5 +1533,25 @@ class Chobo {
         inputArr == orderedArr ? print("Good") : print("Bad")
     }
     
+    func q15734() { // 명장 남정훈
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        var left = inputArr[0]
+        var right = inputArr[1]
+        var both = inputArr[2]
+        while both != 0 {
+            if left <= right {
+                left += 1
+                both -= 1
+                continue
+
+            }
+            if left > right {
+                right += 1
+                both -= 1
+                continue
+            }
+        }
+        print(min(left, right) * 2)
+    }
     
 }

@@ -1554,4 +1554,20 @@ class Chobo {
         print(min(left, right) * 2)
     }
     
+    func test() {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        var arr = Array(repeating: 0, count: 1_000_000_000)
+        var arrFirst1 = arr
+        arrFirst1.insert(1, at: 0)
+        var arrMiddle1 = arr
+        arrMiddle1.insert(1, at: arrMiddle1.count / 2)
+        var arrLast1 = arr
+        arrLast1.append(1)
+//        print(arrFirst1.contains(1)) // 0.00533902645111084
+//        print(arrMiddle1.contains(1)) // 0.03761601448059082
+        print(arrLast1.contains(1)) // 0.06794404983520508
+//        print(arr.contains(1)) // 0.06914293766021729
+        let endTime = CFAbsoluteTimeGetCurrent()
+        print(endTime - startTime)
+    }
 }

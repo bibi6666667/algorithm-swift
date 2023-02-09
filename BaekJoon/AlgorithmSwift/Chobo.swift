@@ -1570,4 +1570,22 @@ class Chobo {
         let endTime = CFAbsoluteTimeGetCurrent()
         print(endTime - startTime)
     }
+    
+    func q23348() { // 스트릿 코딩 파이터
+        let score = readLine()!.split(separator: " ").map { Int($0)! }
+        let teamCount = Int(readLine()!)!
+        var maxScore = 0
+        (1...teamCount).forEach { _ in
+            var teamScore = 0
+            (1...3).forEach { _ in
+                let scoreArr = readLine()!.split(separator: " ").map { Int($0)! }
+                let score = (scoreArr[0] * score[0]) + (scoreArr[1] * score[1]) + (scoreArr[2] * score[2])
+                teamScore += score
+            }
+            if teamScore > maxScore {
+                maxScore = teamScore
+            }
+        }
+        print(maxScore)
+    }
 }

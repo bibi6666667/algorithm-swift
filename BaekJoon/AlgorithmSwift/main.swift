@@ -10,11 +10,11 @@ import Foundation
 //let kingChobo = KingChobo()
 //kingChobo.q25238()
 
-//let chobo = Chobo()
-//chobo.q10769()
+let chobo = Chobo()
+chobo.q23348()
 
-let baekjoon = BaekJoon()
-baekjoon.q2178()
+//let baekjoon = BaekJoon()
+//baekjoon.q2178()
 
 //let softeer = Softeer()
 //softeer.q409(n: 7, graph: [

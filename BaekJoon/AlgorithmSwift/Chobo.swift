@@ -1590,20 +1590,19 @@ class Chobo {
     }
     
     func q23972() { // 악마의 제안
-        let inputArr = readLine()!.split(separator: " ").map { Double($0)! }
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
         let k = inputArr[0]
         let n = inputArr[1]
-        var answer = 0.0
+        var answer = 0
         
         if n == 1 {
             answer = -1
+        } else {
+            answer = (n * k) / (n - 1)
+            if (n * k) % (n - 1) != 0 { // 올림 필요
+                answer += 1
+            }
         }
-        
-        var x = (n * k) / (n - 1)
-        if x != Double(Int(x)) { // 올림 필요
-            x = (n * k) / n
-        }
-        answer = x
-        print(Int(answer))
+        print(answer)
     }
 }

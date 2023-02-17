@@ -1208,32 +1208,32 @@ class Chobo {
     }
     
     func q18312() { // 시각
-//        let input = readLine()!.split(separator: " ")
-//        let n = Int(input[0])!
-//        let k = Character(String(input[1]))
-//        var answer = 0
-//
-//        func appendZero(to num: Int) -> String {
-//            var answer = ""
-//            if num < 10 {
-//                answer = "0\(num)"
-//            } else {
-//                answer = "\(num)"
-//            }
-//            return answer
-//        }
-//
-//        (0...n).forEach { hour in
-//            (0...59).forEach { minute in
-//                (0...59).forEach { second in
-//                    let time = "\(appendZero(to: hour))\(appendZero(to: minute))\(appendZero(to: second))"
-//                    if time.contains(k) {
-//                        answer += 1
-//                    }
-//                }
-//            }
-//        }
-//        print(answer)
+        //        let input = readLine()!.split(separator: " ")
+        //        let n = Int(input[0])!
+        //        let k = Character(String(input[1]))
+        //        var answer = 0
+        //
+        //        func appendZero(to num: Int) -> String {
+        //            var answer = ""
+        //            if num < 10 {
+        //                answer = "0\(num)"
+        //            } else {
+        //                answer = "\(num)"
+        //            }
+        //            return answer
+        //        }
+        //
+        //        (0...n).forEach { hour in
+        //            (0...59).forEach { minute in
+        //                (0...59).forEach { second in
+        //                    let time = "\(appendZero(to: hour))\(appendZero(to: minute))\(appendZero(to: second))"
+        //                    if time.contains(k) {
+        //                        answer += 1
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        print(answer)
         let input = readLine()!.split(separator: " ").map{ Int($0)! }
         let n = input[0]
         let k = input[1]
@@ -1413,8 +1413,8 @@ class Chobo {
             let reversed = Array( baskets[start...end].reversed())
             baskets = head + reversed + tail
         }
-//        baskets.forEach { print($0, terminator: " ")}
-         print(baskets.map{ String($0) }.joined(separator: " "))
+        //        baskets.forEach { print($0, terminator: " ")}
+        print(baskets.map{ String($0) }.joined(separator: " "))
     }
     
     func q10871() { // X보다 작은 수
@@ -1437,14 +1437,14 @@ class Chobo {
     }
     
     func q10987() { // 모음의 개수 - contain? 아니면 loop?
-//        let input = readLine()!
-//        var answer = 0
-//        for char in input { // 글자수 *
-//            if char == "a" || char == "e" || char == "i" || char == "o" || char == "u" {
-//                answer += 1
-//            }
-//        }
-//        print(answer)
+        //        let input = readLine()!
+        //        var answer = 0
+        //        for char in input { // 글자수 *
+        //            if char == "a" || char == "e" || char == "i" || char == "o" || char == "u" {
+        //                answer += 1
+        //            }
+        //        }
+        //        print(answer)
         let input = readLine()! // 글자수 * 5
         let aeiou: [Character] = ["a", "e", "i", "o", "u"]
         var answer = 0
@@ -1509,7 +1509,7 @@ class Chobo {
             }
         }
     }
-
+    
     
     func q14582() { // 오늘도 졌다
         let ullimArr = readLine()!.split(separator: " ").map { Int($0)! }
@@ -1543,7 +1543,7 @@ class Chobo {
                 left += 1
                 both -= 1
                 continue
-
+                
             }
             if left > right {
                 right += 1
@@ -1563,10 +1563,10 @@ class Chobo {
         arrMiddle1.insert(1, at: arrMiddle1.count / 2)
         var arrLast1 = arr
         arrLast1.append(1)
-//        print(arrFirst1.contains(1)) // 0.00533902645111084
-//        print(arrMiddle1.contains(1)) // 0.03761601448059082
+        //        print(arrFirst1.contains(1)) // 0.00533902645111084
+        //        print(arrMiddle1.contains(1)) // 0.03761601448059082
         print(arrLast1.contains(1)) // 0.06794404983520508
-//        print(arr.contains(1)) // 0.06914293766021729
+        //        print(arr.contains(1)) // 0.06914293766021729
         let endTime = CFAbsoluteTimeGetCurrent()
         print(endTime - startTime)
     }
@@ -1605,4 +1605,12 @@ class Chobo {
         }
         print(answer)
     }
+    
+    func q16171() { // 나는 친구가 적다
+        let input = readLine()!
+        let keyword = readLine()!
+        let filteredInput = input.filter { $0.isLetter }
+        filteredInput.contains(keyword) ? print(1) : print(0)
+    }
+    
 }

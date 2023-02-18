@@ -1613,4 +1613,25 @@ class Chobo {
         filteredInput.contains(keyword) ? print(1) : print(0)
     }
     
+    func q16199() { // 나이 계산하기
+        let birthDayArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let currentArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let birthYear = birthDayArr[0]
+        let birthMonth = birthDayArr[1]
+        let birthDay = birthDayArr[2]
+        let currentYear = currentArr[0]
+        let currentMonth = currentArr[1]
+        let currentDay = currentArr[2]
+        if currentMonth > birthMonth {
+            print(currentYear - birthYear)
+        } else if currentMonth == birthMonth
+                    && currentDay >= birthDay {
+            print(currentYear - birthYear)
+        } else {
+            print(currentYear - birthYear - 1)
+        } // 만 나이
+        print(currentYear - birthYear + 1) // 세는 나이
+        print(currentYear - birthYear) // 연나이
+    }
+    
 }

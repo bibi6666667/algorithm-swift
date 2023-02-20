@@ -1634,4 +1634,19 @@ class Chobo {
         print(currentYear - birthYear) // 연나이
     }
     
+    func q16435() { // 스네이크버드
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let fruitArr = readLine()!.split(separator: " ").map { Int($0)! }.sorted()
+        var snake = inputArr[1]
+        for fruit in fruitArr {
+            if snake >= fruit {
+                snake += 1
+            }
+            if snake < fruit {
+                break
+            }
+        }
+        print(snake)
+    }
+    
 }

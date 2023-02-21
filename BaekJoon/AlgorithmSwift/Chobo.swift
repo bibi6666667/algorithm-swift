@@ -1649,4 +1649,26 @@ class Chobo {
         print(snake)
     }
     
+    func q19572() { // 가뭄(small)
+        //a = 1,2칸 b = 1,3칸 c = 2,3칸
+        let inputArr = readLine()!.split(separator: " ").map { Double($0)! }
+        let d1 = inputArr[0], d2 = inputArr[1], d3 = inputArr[2]
+        let abcSum = (d1 + d2 + d3) / 2
+        
+        let a = abcSum - d3
+        let b = abcSum - d2
+        let c = abcSum - d1
+        
+        if a > 0 && b > 0 && c > 0 {
+            print(1)
+            print(String(format: "%.1f", a),
+                  String(format: "%.1f", b),
+                  String(format: "%.1f", c),
+                  separator: " ")
+        } else {
+            print(-1)
+        }
+        
+    }
+    
 }

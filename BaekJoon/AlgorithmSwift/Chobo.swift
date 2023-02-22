@@ -1671,4 +1671,22 @@ class Chobo {
         
     }
     
+    func q20299() { // 3대 측정
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let n = inputArr[0]
+        let k = inputArr[1]
+        let l = inputArr[2]
+        var answerCount = 0
+        var answerArr: [Int] = []
+        (1...n).forEach { _ in
+            let ratingArr = readLine()!.split(separator: " ").map { Int($0)! }
+            if ratingArr.reduce(0, +) >= k
+                && ratingArr.filter({ $0 >= l }).count == ratingArr.count {
+                answerCount += 1
+                answerArr.append(contentsOf: ratingArr)
+                }
+        }
+        print(answerCount)
+        answerArr.forEach { print($0, terminator: " ") }
+    }
 }

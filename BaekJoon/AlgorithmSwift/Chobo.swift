@@ -1689,4 +1689,25 @@ class Chobo {
         print(answerCount)
         answerArr.forEach { print($0, terminator: " ") }
     }
+    
+    func q20361() { // 일우는 야바위꾼
+        let inputArr = readLine()!.split(separator: " ").map { Int($0)! }
+        let n = inputArr[0]
+        let x = inputArr[1]
+        let k = inputArr[2]
+        var ballIndex = x
+        for _ in (1...k) {
+            let swapArr = readLine()!.split(separator: " ").map { Int($0)! }
+            if swapArr.contains(ballIndex) {
+                if swapArr[0] == ballIndex {
+                    ballIndex = swapArr[1]
+                } else if swapArr[1] == ballIndex {
+                    ballIndex = swapArr[0]
+                }
+            } else {
+                continue
+            }
+        }
+        print(ballIndex)
+    }
 }

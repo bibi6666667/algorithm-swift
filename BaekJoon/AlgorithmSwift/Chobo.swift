@@ -1684,7 +1684,7 @@ class Chobo {
                 && ratingArr.filter({ $0 >= l }).count == ratingArr.count {
                 answerCount += 1
                 answerArr.append(contentsOf: ratingArr)
-                }
+            }
         }
         print(answerCount)
         answerArr.forEach { print($0, terminator: " ") }
@@ -1715,37 +1715,14 @@ class Chobo {
         let a = Int(readLine()!)!
         let b = Int(readLine()!)!
         let c = Int(readLine()!)!
-        let abc = a * b * c
-        var num0 = 0, num1 = 0, num2 = 0, num3 = 0, num4 = 0
-        var num5 = 0, num6 = 0, num7 = 0, num8 = 0, num9 = 0
-        for char in String(abc) {
-            switch char {
-            case "0":
-                num0 += 1
-            case "1":
-                num1 += 1
-            case "2":
-                num2 += 1
-            case "3":
-                num3 += 1
-            case "4":
-                num4 += 1
-            case "5":
-                num5 += 1
-            case "6":
-                num6 += 1
-            case "7":
-                num7 += 1
-            case "8":
-                num8 += 1
-            case "9":
-                num9 += 1
-            default:
-                continue
-            }
+        let abc = String(a * b * c)
+        var numCountArr: [Int] = Array(repeating: 0, count: 10)
+        for char in abc {
+            let index = Int(String(char))!
+            numCountArr[index] += 1
         }
-        print(num0, num1, num2, num3, num4,
-              num5, num6, num7, num8, num9,
-              separator: "\n")
+        for value in numCountArr {
+            print(value)
+        }
     }
 }

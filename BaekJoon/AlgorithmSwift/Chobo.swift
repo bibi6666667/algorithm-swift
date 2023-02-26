@@ -1725,4 +1725,15 @@ class Chobo {
             print(value)
         }
     }
+    
+    func q2750() { // 수 정렬하기
+        let count = Int(readLine()!)!
+        var arr: [Int] = []
+        (1...count).forEach { _ in
+            let input = Int(readLine()!)!
+            arr.append(input)
+        }
+        arr = arr.sorted()
+        arr.forEach { print($0) }
+    }
 }

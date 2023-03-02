@@ -75,4 +75,18 @@ class Programmers {
         }
         return count1
     }
+    
+    func q12937(_ num: Int) -> String { // 짝수와 홀수
+        var answer = ""
+        if num % 2 == 0 {
+            answer = "Even"
+        } else {
+            answer = "Odd"
+        }
+        return answer
+    }
+    
+    func q12944(_ arr: [Int]) -> Double { // 평균 구하기
+        return Double(arr.reduce(0, +)) / Double(arr.count)
+    }
 }

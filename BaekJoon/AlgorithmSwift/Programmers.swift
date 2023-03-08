@@ -89,4 +89,34 @@ class Programmers {
     func q12944(_ arr: [Int]) -> Double { // 평균 구하기
         return Double(arr.reduce(0, +)) / Double(arr.count)
     }
+    
+    func q12931(_ n: Int) -> Int { // 자릿수 더하기
+        var answer = 0
+        for char in String(n) {
+            let digit = Int(String(char))!
+            answer += digit
+        }
+        return answer
+    }
+    
+    func q12916(_ s: String) -> Bool { // 문자열 내 p와 y의 개수
+        var answer = false
+        var pCount = 0
+        var yCount = 0
+        for char in s.uppercased() {
+            if char == "P" {
+                pCount += 1
+            }
+            if char == "Y" {
+                yCount += 1
+            }
+        }
+        if pCount == yCount {
+            answer = true
+        } else {
+            answer = false
+        }
+        return answer
+    }
+    
 }

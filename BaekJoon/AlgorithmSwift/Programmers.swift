@@ -119,4 +119,12 @@ class Programmers {
         return answer
     }
     
+    func q12954(_ x: Int, _ n: Int) -> [Int] { // x만큼 간격이 있는 n개의 숫자
+        var answer: [Int] = []
+        for i in (1...n) {
+            answer.append(x * i)
+        }
+        return answer
+    }
+    
 }

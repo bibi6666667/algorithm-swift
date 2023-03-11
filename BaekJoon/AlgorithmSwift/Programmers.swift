@@ -127,4 +127,33 @@ class Programmers {
         return answer
     }
     
+    func q12934(_ n:Int64) -> Int64 { // 정수 제곱근 판별
+        //        var answer: Int64 = 0
+        //        let root = sqrt(Double(n))
+        //        let rootInt = Double(Int(root))
+        //        if root != rootInt {
+        //            answer = -1
+        //        } else {
+        //            answer = Int64(pow(rootInt + 1, 2))
+        //        }
+        //        return answer
+        var answer: Int64 = 0
+        let rootInt = Int64(sqrt(Double(n)))
+        if rootInt * rootInt == n {
+            answer = (rootInt + 1) * (rootInt + 1)
+        } else {
+            answer = -1
+        }
+        return answer
+    }
+    
+    func test(n: Double) {
+        let nPow = Int(n * n)
+        let intNPow = Int(n) * Int(n)
+        if nPow == intNPow {
+            print("\(n)은 소수점 이하 값이 없는 Double")
+        } else {
+            print("\(n)은 소수점 이하 값이 있는 Double")
+        }
+    }
 }
